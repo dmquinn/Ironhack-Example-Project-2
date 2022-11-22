@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row p-2 g-4">
+    {{#each users}}
+      <div class="col-sm-12 col-md-4 mb-5">
+        <a href="/users/{{_id}}"><div class="card w-100">
+            <img class="card-img-top w-100 h-50" src={{image}} alt="Card" />
+            <div class="card-body">
+              <p class="card-text">{{username}}</p>
+              <p class="card-text">{{posts.length}} posts</p>
+
+            </div>
+          </div></a>
+      </div>
+    {{/each}}
+  </div>
+</div>

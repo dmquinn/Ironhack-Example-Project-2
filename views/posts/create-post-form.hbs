@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-6">
+    <form action="/create-post" method="POST" enctype="multipart/form-data">
+      {{! !!! }}
+      <div class="form-group">
+        <label>Artist:
+          <input type="text" name="artist" class="form-control" />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Title:
+          <input type="text" name="title" class="form-control" />
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Description:
+          <textarea name="description" cols="30" rows="4" class="form-control">
+          </textarea>
+        </label>
+      </div>
+      <div class="form-group">
+        <select name="category" class="">
+          <option>Category</option>
+          <option value="rockAndPop">Rock and Pop</option>
+          <option value="punk">Punk</option>
+          <option value="folk">Folk</option>
+          <option value="electronic">Electronic</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Image:
+          <input type="file" name="post-photo" class="form-control-file" />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Price:
+          <input type="number" name="price" class="form-control-file" />
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>

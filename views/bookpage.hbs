@@ -1,0 +1,26 @@
+<div>BOOKs</div>
+<form action="/search" method="GET"><input
+    type="text"
+    name="searchTerm"
+    placeholder="Search Books"
+  /></form>
+{{#each books}}
+  <div class="card" style="width: 18rem;">
+    <img
+      class="card-img-top"
+      src={{imageLinks.thumbnail}}
+      alt="Card image cap"
+    />
+    <div class="card-body"><h1>THUMB{{imageLinks.thumbnail}}</h1>
+      <h5 class="card-title">{{volumeInfo.title}}</h5>
+      {{#each volumeInfo.authors}}
+        <p class="card-text">{{this}}</p>
+      {{/each}}
+      {{#each volumeInfo.categories}}
+        <p class="card-text text-faded">{{this}}</p>
+      {{/each}}
+
+      <a href={{selfLink}} class="card-text">Link</a>
+    </div>
+  </div>
+{{/each}}

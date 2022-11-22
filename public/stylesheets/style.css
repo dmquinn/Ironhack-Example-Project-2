@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+.navbar {
+  background-color: black!important;
+  color: white !important;
+}
+.profileThumb {
+  height: 40px; 
+  width: 40px;
+  border-radius:50%;
+}
+
+.nav-link {
+  color: white!important;
+font-family: 'Exo 2', sans-serif;}
+
+.topImage {
+  object-fit: cover;
+}
+
+.card-img-top {
+  height: 340px !important;
+  object-fit: cover !important;
+}
+
+.card {
+  background-color: black!important;
+  color: white;
+  cursor: pointer !important;
+    transition: 0.2s;
+}
+
+.card:hover {
+  filter: opacity(0.8) !important;
+  transition: 0.1s;
+}
+
+.test {
+  color: black !important;
+}

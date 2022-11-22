@@ -1,0 +1,97 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg p-4 px-5">
+      <a class="navbar-brand" href="/"><img
+          src="images/logo.png"
+          class="logo"
+        /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+          </li>
+          {{#unless userIsLoggedIn}}
+
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signup">Sign Up</a>
+            </li>
+          {{/unless}}
+
+        </ul>
+        {{#if user}}
+          <ul class="navbar-nav ml-auto align-middle">
+            <li class="nav-item mt-2 mr-2">
+              <a class="nav-link" href="/logout">Log out</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href=""
+                data-bs-target="#myModal"
+                data-bs-toggle="modal"
+              ><img src={{user.image}} class="profileThumb" /></a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link mt-2"
+                href="/users/{{user._id}}"
+                data-bs-target="#myModal"
+                data-bs-toggle="modal"
+              >{{user.username}}</a>
+            </li>
+          </ul>
+        {{/if}}
+      </div>
+    </nav>
+    {{{body}}}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="/js/script.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=test"></script>
+    <script>
+      paypal.Buttons().render("body");
+    </script>
+    <script>import { loadScript } from "@paypal/paypal-js"; let paypal; try {
+      paypal = await loadScript({ "client-id": "test" }); } catch (error) {
+      console.error("failed to load the PayPal JS SDK script", error); } if
+      (paypal) { try { await paypal.Buttons().render("#your-container-element");
+      } catch (error) { console.error("failed to render the PayPal Buttons",
+      error); } }</script>
+  </body>
+
+</html>
